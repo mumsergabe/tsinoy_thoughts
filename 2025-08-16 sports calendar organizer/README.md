@@ -29,10 +29,8 @@ This tool was built with the following frameworks and technologies.
 The tool is a Google Sheets add-on using Apps Script for server logic and HtmlService for a small, native-feeling dialog UI. Client-side HTML/JS handles the multi-sheet picker, and Apps Script on the server manages Calendar operations, sheet parsing, and styling. Data lives in the spreadsheet itself—no external DB or hosted backend—so deployment is simply saving the script in the spreadsheet project.
 
 1. For Front End (Client-side):  
-   * HtmlService modal dialog (SheetsPickerTemplate.html) rendered in a sandboxed browser context.  
-   * Vanilla HTML/CSS/JS for a light UI (checkbox list of sheets, “Select all” / “Deselect all” helpers, primary/secondary buttons).  
-   * google.script.run bridges UI actions to Apps Script server functions.  
-2. Back end:  
+   * HtmlService modal dialog rendered in a sandboxed browser context.  
+2. Back end (Server-side):  
    * Calendar logic with Advanced Calendar service (if enabled) and CalendarApp fallback.  
    * Event title generation, date/time parsing, duplicate detection, creation/deletion flows.  
    * Multi-sheet and single-sheet orchestration, including a “Fill-in ERROR events” retry pass.  
@@ -46,3 +44,7 @@ The tool is a Google Sheets add-on using Apps Script for server logic and HtmlSe
      * Save Code.gs and create SheetsPickerTemplate.html file in the same project.  
      * Ensure the Advanced Calendar service is enabled if you want colorId and direct event inserts via Calendar API. Otherwise, it gracefully falls back to CalendarApp.  
      * Use the custom menu to run features; authorization prompts appear on first run.
+5. Tooling:
+   * IDE: Microsoft Visual Studio Code
+   * Version control: git and GitHub
+   * AI-powered programming assistants: Google Gemini, OpenAI ChatGPT
